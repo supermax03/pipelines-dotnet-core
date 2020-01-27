@@ -30,3 +30,4 @@ steps:
     scannerMode: 'MSBuild'
     projectKey: 'sonar_prueba'
     projectName: 'sonar_prueba'
+- task: SonarCloudAnalyze@1
