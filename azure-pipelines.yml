@@ -17,6 +17,9 @@ pool:
 #    - master
 #  always: true
 
+- script: dotnet build --configuration $(buildConfiguration)
+  displayName: 'dotnet build $(buildConfiguration)'
+
 variables:
   buildConfiguration: 'Release'
 
@@ -33,7 +36,5 @@ steps:
   inputs:
     pollingTimeoutSec: '300'
 
-- task: SonarCloudAnalyze@1
 
-- script: dotnet build --configuration $(buildConfiguration)
-  displayName: 'dotnet build $(buildConfiguration)'
+
