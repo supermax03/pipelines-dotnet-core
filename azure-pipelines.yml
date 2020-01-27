@@ -9,6 +9,14 @@ trigger:
 pool:
   vmImage: 'ubuntu-latest'
 
+schedules:
+- cron: "*/2 * * * *"
+  displayName: Daily build of live site
+  branches:
+    include:
+    - master
+  always: true
+
 variables:
   buildConfiguration: 'Release'
 
