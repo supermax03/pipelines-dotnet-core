@@ -17,13 +17,15 @@ pool:
 #    - master
 #  always: true
 
-- script: dotnet build --configuration $(buildConfiguration)
-  displayName: 'dotnet build $(buildConfiguration)'
+
 
 variables:
   buildConfiguration: 'Release'
 
 steps:
+
+- script: dotnet build --configuration $(buildConfiguration)
+  displayName: 'dotnet build $(buildConfiguration)'
 
 - task: SonarCloudPrepare@1
   inputs:
